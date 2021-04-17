@@ -1,5 +1,5 @@
-import React, { useState, Component } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import React, { Component } from "react";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import {
   Card,
@@ -12,7 +12,7 @@ import {
   Form,
   FormGroup,
   Input,
-
+  Button
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
@@ -228,6 +228,14 @@ class createQuestion extends Component {
                             Option 4
                           </label>
                         </div>
+                      </Col>
+                    </Row>
+                    <br/>
+                    <Row>
+                      <Col>
+                        <Button color="success" type="button">
+                          Create Question
+                        </Button>
                       </Col>
                     </Row>
                   </Form>
