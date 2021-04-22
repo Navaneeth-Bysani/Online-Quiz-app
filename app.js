@@ -8,9 +8,9 @@ const path = require("path");
 const middleware = require("./utils/middleware");
 const clientEndpoints = ["discover", "profile", "update"];
 const AppError = require("./utils/appError");
-const globalErrorHandler = require("./controller/errorController");
+const globalErrorHandler = require("./controller/errorController.js");
 
-
+const questionsRouter = require("./routes/questionRoutes.js");
 
 const app = express();
 
@@ -31,7 +31,7 @@ app.use(middleware.requestLogger);
 app.use(express.static(path.join(__dirname, "client/build")));
 
 //routes
-
+app.use("/api/v1/questions",questionsRouter);
 app.get("*", (req, res, next) => {
   res.sendFile(path.join(__dirname, "/client/build/index.html"));
 });
